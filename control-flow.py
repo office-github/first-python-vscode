@@ -11,7 +11,7 @@ else:
     print('More')
 print("done.")
 
-''' Output: 
+''' Output:
 Please enter an integer: 24
 More
 done.
@@ -40,3 +40,9 @@ defenestrate
 
 # len of words
 print("len of words: ", len(words))
+
+range(0, 10, 3)
+
+print(range(10))  # output: range(0, 10)
+
+print(list(range(5)))  # output: [0, 1, 2, 3, 4]
