@@ -120,3 +120,52 @@ print(f2(3))
 # [1]
 # [2]
 # [3]
+
+'''
+Small anonymous functions can be created with the lambda keyword.
+Lambda functions can be used wherever function objects are required.
+'''
+
+
+def make_incrementor(n):
+    return lambda x: x + n
+
+
+print(make_incrementor(42))
+# output: <function make_incrementor.<locals>.<lambda> at 0x01009660>
+f = make_incrementor(42)
+print(f(0))  # output: 42
+print(f(2))  # output: 44
+print(f(4))  # output: 46
+
+
+def my_function():
+    """
+    Do nothing, but document it.
+    No, really, it doesn't do anything.
+    """
+    '''
+    blank
+    '''
+    pass
+
+
+print(my_function())  # output: None
+print(my_function.__doc__)
+# output:
+# Do nothing, but document it.
+# No, really, it doesn't do anything.
+
+
+def f3(ham: str, eggs: str = 'eggs') -> str:
+    print("Annotations:", f3.__annotations__)
+    print("Arguments:", ham, eggs)
+    return ham + ' and ' + eggs
+
+
+f3('spam')
+
+# output:
+# Annotations: {'ham': < class 'str' > , 'return': < class 'str' > , 'eggs': < class 'str' > }
+# Arguments: spam eggs
+# 'spam and eggs'
